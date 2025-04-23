@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<title>Body Mass Index Calculator</title>
+	  <style>
+    .container1{
+	background-color: #8899b5;
+	width: 500px;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+	margin: auto;
+	border: 4px solid white;
+	border-radius: 10px;
+}
+.container2{
+	background-color: #8899b5;
+	width: 500px;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+	margin: auto;
+	border: 4px solid white;
+	border-radius: 10px;
+}
+form{
+	background-color: #8899b5;
+	box-shadow: 4px 4px 4px rgba(0,0,0,0.3);
+	margin: auto;
+	padding: 30px;
+	border: 4px solid white;
+	border-radius: 10px;
+}
+
+body{
+	background-color: gray;
+}
+      
+  </style>
+	}
+</head>
+<body>
+	
+	<br><br>
+	<div class="container1">
+	<center>
+	<h1>BMI CALCULATOR</h1>
+	<p><strong>Body mass index (BMI)</strong> uses height and weight in order to estimate body fat.</p>
+	</center>
+	</div>
+	<br><br>
+	<center>
+<table class="col-md-7">
+	<tr>
+	<td>
+	<div class="col-md-10" class="table1">
+<table class="table table-dark table-bordered table-hover">
+			<tr class="table-dark">
+		<th>Category</th>
+		<th>Range</th>
+			</tr>
+			<tr class="table-secondary">
+		<td class="text-start"><p>Underweight</p></td>
+		<td class="text-start"><p>< 18.5</p></td>
+							</tr>
+			<tr class="table-secondary">
+		<td class="text-start"><p>Normal Weight</p></td>
+		<td class="text-start"><p>≥ 18.5 and ≤ 24.9</p></td>
+			</tr>
+			<tr class="table-secondary">
+		<td class="text-start"><p>Overweight</p></td>
+		<td class="text-start"><p>≥ 25 and ≤ 29.9</p></td>
+							</tr>
+			<tr class="table-secondary">
+		<td class="text-start"><p>Obese</p></td>
+		<td class="text-start"><p>≥30</p></td>
+			</tr>
+
+</table>
+	</div>
+	</td>
+	<td class="col-md-5">
+	<details ontoggle="message()">
+		<summary>Instructions</summary>
+		<i id="Show"></i>
+	</details><br>
+
+	<div class="col-md-9">
+	<form>
+		<label>Weight (kilograms)</label>
+			<input type="text" id="weight" class="form-control">
+		<label>Height (meters)</label>
+			<input type="text" id="height" class="form-control">
+			<br>
+		<button type="Submit" class="btn btn-secondary" onclick="bmicomp()"> Compute </button>
+	</form>
+	</div>
+</td>
+</tr>
+</center>
+
+		<script>
+			function bmicomp(){
+				var weight = document.getElementById("weight").value;
+				var height = document.getElementById("height").value;
+				var bmi = weight / Math.pow(height,2);
+				if (bmi < 18.5) {
+					category = "Underweight";
+				} else if (bmi <= 24.9) {
+					category = "Normal weight";
+				} else if (bmi <= 29.9) {
+					category = "Overweight";
+				} else {
+					category = "Obese";
+				}
+
+				window.alert("Your BMI is " + bmi.toFixed(2) + ". You are " + category);
+			
+			}
+
+			function message(){
+				document.getElementById("Show").innerHTML="Enter your weight and height using the <strong>metric system</strong>. Click 'Compute' in order for it to appear.";
+			}
+		
+		</script>
+	</div>
+</table>
+<br><br>
+<div class="container2">
+<p> Source: <a href="https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmi-m.htm">https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmi-m.htm</a></p>
+</div>
+</div>
+</body>
+</html>
